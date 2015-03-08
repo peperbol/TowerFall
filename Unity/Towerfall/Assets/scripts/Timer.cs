@@ -11,7 +11,6 @@ public class Timer : MonoBehaviour
   private void Awake()
   {
 
-    GameController.Reset();
   }
 
   private void Start()
@@ -21,12 +20,15 @@ public class Timer : MonoBehaviour
 
   void Update ()
 	{
-	  timeLeft -= Time.deltaTime;
-    TimeDisplay.text = timeLeft.ToString("##0.0 'Sec.'");
-    FloorsDisplay.text = Statistics.FloorsReached.ToString("##0 'Floors'");
-    if (timeLeft < 0)
+    if (!GameController.gameOver)
     {
-      GameController.GameOver();
+      timeLeft -= Time.deltaTime;
+      TimeDisplay.text = timeLeft.ToString("##0.0 'Sec.'");
+      FloorsDisplay.text = Statistics.FloorsReached.ToString("##0 'Floors'");
+      if (timeLeft < 0)
+      {
+        GameController.GameOver();
+      }
     }
 	}
 

@@ -10,7 +10,7 @@ public static class Statistics
   private static float denstityRandomisationRange = 0.15f;
   private static int floorsReached = 0;
   private static float timePerFloor = 5f;
-  private static float lastYcoordinate = 5;
+  private static float lastYcoordinate = 0;
 
   public static float DistanceBewteenFloors
   {
@@ -56,6 +56,6 @@ public static class Statistics
     floorDensity = 0.6f;
     timePerFloor = 3f;
     floorsReached = 0;
-    lastYcoordinate = DistanceBewteenFloors;
+    lastYcoordinate = 0;
   }
 }

@@ -14,8 +14,8 @@ public class InputController : MonoBehaviour
 	    {
 
 	      float maxDistance = Mathf.Min(Screen.width, Screen.height)/2/maxMoveValue;
-	      GameController.player.Move(new Vector2((Input.GetTouch(0).position.x - Screen.width/2)/maxDistance,
-	        (Input.GetTouch(0).position.y - Screen.height/2)/maxDistance));
+	      GameController.player.Move(new Vector2( (Input.GetTouch(0).position.x - Screen.width/2)/maxDistance,
+	                                              (Input.GetTouch(0).position.y - Screen.height/2)/maxDistance   ));
 
 	    
 	    /*

@@ -67,6 +67,7 @@
     <Compile Include="Assets\scripts\Reset.cs" />
     <Compile Include="Assets\scripts\ScalingText.cs" />
     <Compile Include="Assets\scripts\ScoreReaderWriter.cs" />
+    <Compile Include="Assets\scripts\StartFloor.cs" />
     <Compile Include="Assets\scripts\Statistics.cs" />
     <Compile Include="Assets\scripts\Tile.cs" />
     <Compile Include="Assets\scripts\Timer.cs" />

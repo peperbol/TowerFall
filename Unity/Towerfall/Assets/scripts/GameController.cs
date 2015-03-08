@@ -15,16 +15,9 @@ public static class GameController
     if (!gameOver)
     {
       gameOver = true;
-      GameObject.Destroy(player.rigidbody);
-      GameObject.Destroy(GameObject.FindObjectOfType<Timer>());
 
       LastFloorsReached = Statistics.FloorsReached;
 
-      RectTransform go = (RectTransform) GameObject.Instantiate(Resources.Load<RectTransform>("Prefabs/GameOver"));
-
-      go.SetParent(GameObject.FindGameObjectWithTag("UICanvas").transform);
-      go.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, 0, Screen.height);
-      go.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 0, Screen.width);
 
 
       if (LastFloorsReached > ScoreReaderWriter.getHighscore())

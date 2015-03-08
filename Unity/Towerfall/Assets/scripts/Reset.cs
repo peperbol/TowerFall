@@ -3,9 +3,10 @@ using System.Collections;
 
 public class Reset : MonoBehaviour
 {
+  public string levelName;
   public void OnClick()
   {
-    Application.LoadLevel(Application.loadedLevelName);
-
+    GameController.Reset();
+    Application.LoadLevel(levelName);
   }
 }

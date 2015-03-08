@@ -7,7 +7,11 @@ public static class FloorQueue
 {
 
   private static Queue<Floor> queue = new Queue<Floor>();
-  
+
+  public static void Enqueue(Floor floorToEnqueue)
+  {
+    queue.Enqueue(floorToEnqueue);
+  }
 
   public static void MakeNewFloor()
   {
