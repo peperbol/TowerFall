@@ -6,10 +6,11 @@ public static class Statistics
 {
 
   private static float floorDensity = 0.6f;
-  private static float falloff = 0.97f;
+  private static float DensityFalloff = 0.97f;
+  private static float TimeFalloff = 0.98f;
   private static float denstityRandomisationRange = 0.15f;
   private static int floorsReached = 0;
-  private static float timePerFloor = 5f;
+  private static float timePerFloor = 7f;
   private static float lastYcoordinate = 0;
 
   public static float DistanceBewteenFloors
@@ -30,7 +31,7 @@ public static class Statistics
   {
     get
     {
-      timePerFloor *= falloff;
+      timePerFloor *= TimeFalloff;
       floorsReached ++;
       return timePerFloor;
     }
@@ -46,7 +47,7 @@ public static class Statistics
   {
     get
     {
-      floorDensity *= falloff;
+      floorDensity *= DensityFalloff;
       return floorDensity + Random.Range(-floorDensity*denstityRandomisationRange, floorDensity*denstityRandomisationRange);
     }
   }

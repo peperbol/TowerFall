@@ -307,6 +307,30 @@ Prefab:
       propertyPath: levelName
       value: tower
       objectReference: {fileID: 0}
+    - target: {fileID: 11462072, guid: 5151ba8fec21a754fac82e1584e8492d, type: 2}
+      propertyPath: m_Color.r
+      value: .70588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 11462072, guid: 5151ba8fec21a754fac82e1584e8492d, type: 2}
+      propertyPath: m_Color.g
+      value: .201320469
+      objectReference: {fileID: 0}
+    - target: {fileID: 11462072, guid: 5151ba8fec21a754fac82e1584e8492d, type: 2}
+      propertyPath: m_Color.b
+      value: .0747404844
+      objectReference: {fileID: 0}
+    - target: {fileID: 11440864, guid: 5151ba8fec21a754fac82e1584e8492d, type: 2}
+      propertyPath: m_Color.r
+      value: .498039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 11440864, guid: 5151ba8fec21a754fac82e1584e8492d, type: 2}
+      propertyPath: m_Color.g
+      value: .392156869
+      objectReference: {fileID: 0}
+    - target: {fileID: 11440864, guid: 5151ba8fec21a754fac82e1584e8492d, type: 2}
+      propertyPath: m_Color.b
+      value: .305882365
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5151ba8fec21a754fac82e1584e8492d, type: 2}
   m_RootGameObject: {fileID: 1519052368}
@@ -428,7 +452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: .0294117928, b: .0294117928, a: 1}
+  m_Color: {r: .70588237, g: .201320469, b: .0747404844, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 20
@@ -749,7 +773,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .498039216, g: .392156869, b: .305882365, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 20
