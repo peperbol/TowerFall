@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityVS.Towerfall.CSharp", "UnityVS.Towerfall.CSharp.csproj", "{0BE15E5B-5237-4B4F-7520-F46D9006CB8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityVS.Towerfall.CSharp.Editor", "UnityVS.Towerfall.CSharp.Editor.csproj", "{AF171818-AD7F-666D-7D0A-B0F9E4C3F75D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0BE15E5B-5237-4B4F-7520-F46D9006CB8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BE15E5B-5237-4B4F-7520-F46D9006CB8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BE15E5B-5237-4B4F-7520-F46D9006CB8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BE15E5B-5237-4B4F-7520-F46D9006CB8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF171818-AD7F-666D-7D0A-B0F9E4C3F75D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF171818-AD7F-666D-7D0A-B0F9E4C3F75D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF171818-AD7F-666D-7D0A-B0F9E4C3F75D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF171818-AD7F-666D-7D0A-B0F9E4C3F75D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
