@@ -1,19 +1,29 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections;
-using System.Xml.Schema;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
   public float MoveSpeed;
   public bool isFalling ;
-  public Animation anim;
+  public Animation Anim;
+  public AnimationSoundSync WalkingSound;
+  public AudioSource DeathSound;
+  public AudioFadeInFadeOut FallingSound;
   public float TimeToDie;
+  public Image Black;
+  public float TimeBeforeFadeOut;
+  public float TimeFadingOut;
+  public SpriteSheet Splat;
+
   private float animMaxSpeed;
   private float velocityForMaxSpeed = 0.5f;
-  private float velocityOfRest = 0.05f;
+  private float velocityOfRest = 0.2f;
   private Floor currentFloor;
   private float timeOfDeath = -1;
+  private float fadeOutStart = -1;
+  private bool fadingOut = false;
 
   public Floor CurrentFloor {
     get { return currentFloor; }
@@ -46,30 +56,66 @@ public class Player : MonoBehaviour
         vec.Normalize();
         float i = Mathf.Asin(vec.x)*180/Mathf.PI;
         if (vec.z < 0) i = 180 - i;
-        anim.transform.rotation = Quaternion.AngleAxis(i, Vector3.up);
+        Anim.transform.rotation = Quaternion.AngleAxis(i, Vector3.up);
       }
-      anim["walk"].speed = animMaxSpeed*Mathf.Clamp(rigidbody.velocity.magnitude, 0, 3)/velocityForMaxSpeed;
+      Anim["walk"].speed = animMaxSpeed*Mathf.Clamp(rigidbody.velocity.magnitude, 0, 3)/velocityForMaxSpeed;
     }
     else
     {
-      if (!isFalling)
+
+      if (fadeOutStart < 0)
       {
-        if (timeOfDeath < 0)
+        fadeOutStart = Time.time + TimeBeforeFadeOut;
+      }
+
+      if (!fadingOut && Time.time < fadeOutStart)
+      {
+        if (!isFalling)
         {
-          timeOfDeath = Time.time + TimeToDie;
-          anim.Play("death1");
-        }
-        if (Time.time >= timeOfDeath)
-        {
-          Application.LoadLevel("GameOver");
+          if (timeOfDeath < 0)
+          {
+
+            timeOfDeath = Time.time + TimeToDie;
+
+            WalkingSound.Active = false;
+            DeathSound.Play();
+            Anim.Play("death1");
+            Splat.Play();
+          }
+
+          if (Time.time >= timeOfDeath)
+          {
+            Application.LoadLevel("GameOver");
+          }
         }
       }
+      else if (!fadingOut)
+      {
+         fadingOut = true;
+         timeOfDeath = Time.time + TimeFadingOut;
+         FallingSound.Active = false;
+      }
+
+      if (fadingOut)
+      {
+        Color c = Black.color;
+        c.a = (Time.time - fadeOutStart)/TimeFadingOut;
+        Black.color = c;
+        if (Time.time >= timeOfDeath)
+        {
+          
+            Application.LoadLevel("GameOver");
+        }
+      }
+
     }
   }
 
   public void StartFalling(Floor throughFloor)
   {
     isFalling = true;
+    WalkingSound.Active = false;
+    FallingSound.Active = true;
     if (throughFloor != currentFloor)
     {
       GameController.GameOver();
@@ -83,13 +129,15 @@ public class Player : MonoBehaviour
   public void Land(Floor onFloor)
   {
     isFalling = false;
+    WalkingSound.Active = true;
+    FallingSound.Active = false;
     currentFloor = onFloor;
   }
 
 
   void Start()
   {
-    animMaxSpeed = anim["walk"].speed;
+    animMaxSpeed = Anim["walk"].speed;
     GameController.player = this;
   }
 
