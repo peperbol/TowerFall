@@ -59,6 +59,7 @@
     <Compile Include="Assets\WebCamStreamer.cs" />
     <Compile Include="Assets\scripts\AnimationSoundSync.cs" />
     <Compile Include="Assets\scripts\AudioFadeInFadeOut.cs" />
+    <Compile Include="Assets\scripts\CameraFovFix.cs" />
     <Compile Include="Assets\scripts\Floor.cs" />
     <Compile Include="Assets\scripts\FloorQueue.cs" />
     <Compile Include="Assets\scripts\GameController.cs" />
